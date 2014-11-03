@@ -40,6 +40,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.buffer.size.kb=32 \
     audio.offload.gapless.enabled=false \
     av.offload.enable=true \
+    av.streaming.offload.enable=true \
+    audio.offload.pcm.enable=true \
     qcom.hw.aac.encoder=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
