@@ -29,10 +29,6 @@ TARGET_QCOM_AUDIO_VARIANT := caf-bfam
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 
-# Camera
-TARGET_PROVIDES_CAMERA_HAL := true
-USE_DEVICE_SPECIFIC_CAMERA := true
-
 # Charger
 BOARD_BATTERY_DEVICE_NAME := "battery"
 BOARD_CHARGING_CMDLINE_NAME := "androidboot.bootchg"
