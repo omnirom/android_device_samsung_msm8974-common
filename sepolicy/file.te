@@ -1,0 +1,5 @@
+###########################
+# OmniROM common sepolicy
+#
+
+type sysfs_touchscreen, fs_type, sysfs_type;
