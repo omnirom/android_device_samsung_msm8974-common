@@ -2,4 +2,4 @@
 # OmniROM oppo common sepolicy
 #
 
-type sysfs_touchscreen, fs_type, sysfs_type;
+allow tee modem_block_device:blk_file rw_file_perms;

@@ -64,33 +64,6 @@ COMMON_GLOBAL_CFLAGS += -DQCOM_BSP -DQCOM_HARDWARE
 TARGET_USES_QCOM_BSP := true
 BOARD_USES_QCOM_HARDWARE := true
 
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/samsung/msm8974-common/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    file_contexts \
-    app.te \
-    bluetooth.te \
-    device.te \
-    domain.te \
-    drmserver.te \
-    file.te \
-    hci_init.te \
-    healthd.te \
-    init.te \
-    init_shell.te \
-    keystore.te \
-    kickstart.te \
-    mediaserver.te \
-    nfc.te \
-    rild.te \
-    surfaceflinger.te \
-    system.te \
-    ueventd.te \
-    wpa.te \
-    wpa_socket.te
-
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
 
@@ -98,3 +71,28 @@ BOARD_USES_QC_TIME_SERVICES := true
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_MAX_PARTITIONS := 28
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+
+# selinux
+include device/qcom/sepolicy/sepolicy.mk
+
+BOARD_SEPOLICY_DIRS += \
+    $(COMMON_PATH)/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    device.te \
+    file_contexts \
+    file.te \
+    init_shell.te \
+    mediaserver.te \
+    mm-qcamerad.te \
+    qseecomd.te \
+    rmt_storage.te \
+    sensors.te \
+    system_app.te \
+    system_server.te \
+    time_daemon.te \
+    thermal-engine.te \
+    vold.te \
+    property_contexts \
+    property.te
+
